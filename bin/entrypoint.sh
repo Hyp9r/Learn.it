@@ -9,7 +9,7 @@ chown -R www-data:www-data $(pwd)/var/cache && chown -R www-data:www-data $(pwd)
 if [ -n $DB_HOST ] && [ -n $DB_PORT ]; then
   ./bin/wait-for-it.sh --host=$DB_HOST --port=$DB_PORT --timeout=30
 #  php bin/console doctrine:schema:update --force
-#  php bin/console doctrine:migrations:migrate --env=$APP_ENV --no-interaction
+  php bin/console doctrine:migrations:migrate --env=$APP_ENV --no-interaction
   # Add rest of your startup commands here
 fi
 
